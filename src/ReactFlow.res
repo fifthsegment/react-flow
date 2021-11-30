@@ -10,7 +10,7 @@ module Edge = Types.Edge
 external make: (
   ~elements: Types.rawElements,
   ~children: React.element=?,
-  ~onElementsClick: (~event: Dom.mouseEvent=?, ~element: Types.rawElement=?) => unit=?,
+  ~onElementClick: (~event: Dom.mouseEvent=?, ~element: Types.rawElement=?) => unit=?,
   ~snapToGrid: bool=?,
   ~onConnect: Types.rawElement => unit=?,
   ~onElementsRemove: Types.rawElements => unit=?,
