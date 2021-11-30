@@ -13,5 +13,8 @@
   },
   "peerDependencies": {
     "@rescript/react": "^0.10.1"
+  }, 
+  "scripts" : {
+    "start" : "bsb -make-world"
   }
 }

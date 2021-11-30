@@ -6,11 +6,7 @@ type elementId = string
 
 type transform = (int, int, int)
 
-type position = 
-|Left
-|Right
-|Top
-|Bottom
+type position = [#left | #right | #top | #bottom]
 
 type arrowHeadType = [#Arrow | #ArrowClosed]
 
