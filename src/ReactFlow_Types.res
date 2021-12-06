@@ -28,7 +28,7 @@ module Node = {
   type data
 
   external toData: 'anything => data = "%identity"
-
+  
   @deriving(abstract)
   type t = {
     id: elementId,
@@ -55,6 +55,7 @@ module Node = {
   }
 
   let makeNode = t
+  external getId: t => string = "%identity"
 }
 
 module Edge = {
