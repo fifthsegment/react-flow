@@ -11,6 +11,7 @@ external make: (
   ~elements: Types.rawElements,
   ~children: React.element=?,
   ~onElementClick: (~event: Dom.mouseEvent=?, ~element: Types.rawElement=?) => unit=?,
+  ~onNodeDragStart: (~event: Dom.mouseEvent=?, ~element: Types.rawElement=?) => unit=?,
   ~snapToGrid: bool=?,
   ~onConnect: Types.rawElement => unit=?,
   ~onElementsRemove: Types.rawElements => unit=?,
@@ -24,6 +25,7 @@ external make: (
   ~onConnectStart: Types.onConnectStartFunc=?,
   ~onConnectStop: Types.onConnectStopFunc=?,
   ~onConnectEnd: Types.onConnectEndFunc=?,
+  ~connectionMode: Types.connectionMode=?
 ) => React.element = "default"
 
 module Handle = {
