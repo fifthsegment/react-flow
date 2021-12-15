@@ -12,6 +12,7 @@ external make: (
   ~children: React.element=?,
   ~onElementClick: (~event: Dom.mouseEvent=?, ~element: Types.rawElement=?) => unit=?,
   ~onNodeDragStart: (~event: Dom.mouseEvent=?, ~element: Types.rawElement=?) => unit=?,
+  ~onNodeDragStop: (~event: Dom.mouseEvent=?, ~element: Types.rawElement=?) => unit=?,
   ~onNodeDrag: (~event: Dom.mouseEvent=?, ~element: Types.rawElement=?) => unit=?,
   ~snapToGrid: bool=?,
   ~onConnect: Types.rawElement => unit=?,
@@ -27,7 +28,8 @@ external make: (
   ~onConnectStop: Types.onConnectStopFunc=?,
   ~onConnectEnd: Types.onConnectEndFunc=?,
   ~connectionMode: Types.connectionMode=?,
-  ~onSelectionChange: ( Js.Nullable.t<array<Types.rawElements>> ) => unit = ?,
+  ~onSelectionChange: ( Js.Nullable.t<array<Types.rawElement>> ) => unit = ?,
+  ~onEdgeUpdate: (Types.Edge.t, Types.connection) => unit = ?,
 ) => React.element = "default"
 
 module Handle = {
@@ -68,6 +70,7 @@ module Controls = {
     ~onZoomOut: unit => unit=?,
     ~onFitView: unit => unit=?,
     ~onInteractiveChange: (~interactiveStatus: bool) => unit=?,
+    ~children: React.element=?,
   ) => React.element = "Controls"
 }
 
@@ -86,6 +89,11 @@ module Background = {
 module Provider = {
   @module("react-flow-renderer") @react.component
   external make: (~children: React.element) => React.element = "ReactFlowProvider"
+}
+
+module ControlButton = {
+  @module("react-flow-renderer") @react.component
+  external make: (~children: React.element, ~onClick: unit => unit, ~disabled: bool) => React.element = "ControlButton"
 }
 
 module EdgeText = {
