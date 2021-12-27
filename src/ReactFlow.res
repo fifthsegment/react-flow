@@ -114,7 +114,7 @@ module EdgeText = {
 external useStoredAction: unit => Types.Action.t = "useStoredAction"
 
 @module("react-flow-renderer")
-external useStoreState: unit => Types.reactFlowState = "useStoreState"
+external useStoreState: (Types.reactFlowState => 'anything) => unit = "useStoreState"
 
 @module("react-flow-renderer")
 external useZoomPanHelper: unit => Types.zoomPanHelperFunctions = "useZoomPanHelper"
