@@ -25,7 +25,7 @@ external jsGetIncomers: (rawElement, rawElements) => rawElements = "getIncomers"
 external jsGetConnectedEdges: (rawElements, rawElements) => rawElements = "getConnectedEdges"
 
 @module("react-flow-renderer")
-external getMarkerEnd: (arrowHeadType, markerEndId) => rawElements = "getMarkerEnd"
+external getMarkerEnd: (arrowHeadType, string) => rawElements = "getMarkerEnd"
 
 @module("react-flow-renderer")
 external getTransformForBounds: (
