@@ -8,7 +8,7 @@ type transform = (int, int, int)
 
 type position = [#left | #right | #top | #bottom]
 
-type arrowHeadType = [#Arrow | #ArrowClosed]
+type arrowHeadType = [#arrow | #arrowclosed | #arrowclosedhighlighted]
 
 type xyPosition = {x: int, y: int}
 
